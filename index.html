@@ -9,11 +9,11 @@
     let bg;
 
     function preload() {
-      bg = loadImage(bg.png);
+      bg = loadImage('bg.png');
     }
 
     function setup() {
-      createCanvas(windowWidth, windowHeight);
+      createCanvas(bg.width, bg.height);
       imageMode(CENTER);
     }
 
@@ -30,7 +30,7 @@
     }
 
     function windowResized() {
-      resizeCanvas(windowWidth, windowHeight);
+      resizeCanvas(bg.width, bg.height);
     }
 
     function displayCoordinates() {
