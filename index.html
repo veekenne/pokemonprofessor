@@ -18,6 +18,9 @@
     function setup() {
       createCanvas(bg.width, bg.height);
       imageMode(CENTER);
+
+      // Create buttons for choices
+      createChoiceButtons();
     }
 
     function draw() {
@@ -40,16 +43,6 @@
         textSize(20);
         textAlign(CENTER);
         text(message, width / 2, height - 100);
-      }
-
-      // Display choices if any
-      if (choices.length > 0) {
-        fill(255);
-        textSize(16);
-        textAlign(CENTER);
-        for (let i = 0; i < choices.length; i++) {
-          text(choices[i], width / 2, height - 70 + i * 20);
-        }
       }
 
       // Display response if any
@@ -81,13 +74,11 @@
 
       // Check if mouse is over zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
-        
         isOverZone = true;
       }
 
       // Check if mouse is over zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
-        
         isOverZone = true;
       }
 
@@ -106,9 +97,10 @@
 
       // Check if mouse is clicked in zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
-        message = "You clicked on the computer!";
+        message = "You clicked on the professor!";
         choices = ["Option 1: Open browser", "Option 2: Check emails", "Option 3: Shut down"];
-        response = "You decide to interact with the computer.";
+        response = "You decide to interact with the professor.";
+        createChoiceButtons();
       }
 
       // Check if mouse is clicked in zone2
@@ -116,9 +108,30 @@
         message = "You clicked on the book!";
         choices = ["Option 1: Read chapter 1", "Option 2: Bookmark page", "Option 3: Close book"];
         response = "You decide to interact with the book.";
+        createChoiceButtons();
       }
+    }
+
+    function createChoiceButtons() {
+      // Remove existing buttons
+      let existingButtons = document.querySelectorAll('.choice-button');
+      existingButtons.forEach(button => button.remove());
+
+      // Create new buttons for choices
+      for (let i = 0; i < choices.length; i++) {
+        let button = createButton(choices[i]);
+        button.position(width / 2 - 50, height - 70 + i * 30);
+        button.class('choice-button');
+        button.mousePressed(() => handleChoice(i));
+      }
+    }
+
+    function handleChoice(index) {
+      response = "You chose: " + choices[index];
+      message = "You clicked on " + choices[index] + "!";
     }
   </script>
 </body>
 </html>
+
 
