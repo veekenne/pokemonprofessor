@@ -9,11 +9,11 @@
     let bg;
 
     function preload() {
-      bg = loadImage('bg.png');
+      bg = loadImage('/mnt/data/bg.png');
     }
 
     function setup() {
-      createCanvas(1000, 600);
+      createCanvas(windowWidth, windowHeight);
       imageMode(CENTER);
     }
 
@@ -27,6 +27,10 @@
 
       // Display coordinates
       displayCoordinates();
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
     }
 
     function displayCoordinates() {
