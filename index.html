@@ -97,9 +97,8 @@
 
       // Check if mouse is clicked in zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
-        message = "PROFESSOR KENNEDY smiles from a distance.";
+        message = "PROFESSOR KENNEDY waves from a distance.";
         choices = ["View the Professor's ePortfolio", "Contact the Professor"];
-        response = "You decide to interact with the PROFESSOR.";
         createChoiceButtons();
       }
 
@@ -107,7 +106,6 @@
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
         message = "The POKEBALL twitches. Something is inside.";
         choices = ["Visit the Pokemon Twineline"];
-        response = "You decide to interact with the POKEBALL.";
         createChoiceButtons();
       }
     }
