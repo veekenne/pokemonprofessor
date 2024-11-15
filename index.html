@@ -98,7 +98,7 @@
       // Check if mouse is clicked in zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
         message = "PROFESSOR KENNEDY smiles from a distance.";
-        choices = ["Option 1: View the Professor's ePortfolio", "Option 2: Contact the Professor"];
+        choices = ["View the Professor's ePortfolio", "Contact the Professor"];
         response = "You decide to interact with the PROFESSOR.";
         createChoiceButtons();
       }
@@ -131,8 +131,13 @@
         window.open('https://veekenne.github.io/poketimeline/', '_blank');
       } else {
         response = "You chose: " + choices[index];
-        message = "You clicked on " + choices[index] + "!";
-      }
+        message = "You clicked on " + choices[index] + "!"; }
+
+      if (choices[index] === "View the Professor's ePortfolio") {
+        window.open('https://veekenne.github.io/home/', '_blank');
+      } else {
+        response = "You chose: " + choices[index];
+        message = "You clicked on " + choices[index] + "!"; }
     }
   </script>
 </body>
