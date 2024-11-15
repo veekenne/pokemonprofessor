@@ -81,15 +81,13 @@
 
       // Check if mouse is over zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
-        fill(255, 0, 0);
-        rect(zone1.x, zone1.y, zone1.width, zone1.height);
+        
         isOverZone = true;
       }
 
       // Check if mouse is over zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
-        fill(0, 0, 255);
-        rect(zone2.x, zone2.y, zone2.width, zone2.height);
+        
         isOverZone = true;
       }
 
@@ -123,3 +121,4 @@
   </script>
 </body>
 </html>
+
