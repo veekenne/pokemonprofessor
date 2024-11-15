@@ -9,15 +9,17 @@
     let bg;
 
     function preload() {
-      bg = loadImage('bg.png');
+      bg = loadImage('/mnt/data/bg.png');
     }
 
     function setup() {
       createCanvas(800, 600);
+      imageMode(CENTER);
     }
 
     function draw() {
-      background(bg);
+      background(0);
+      image(bg, width / 2, height / 2);
 
       // Example player character
       fill(0, 255, 0);
@@ -30,7 +32,8 @@
     function displayCoordinates() {
       fill(255);
       textSize(16);
-      text("X: " + mouseX + " Y: " + mouseY, 10, height - 10);
+      textAlign(RIGHT);
+      text("X: " + mouseX + " Y: " + mouseY, width - 10, height - 10);
     }
   </script>
 </body>
