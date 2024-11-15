@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple P5.js Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <script>
+    let bg;
+
+    function preload() {
+      bg = loadImage('bg.png');
+    }
+
+    function setup() {
+      createCanvas(800, 600);
+    }
+
+    function draw() {
+      background(bg);
+
+      // Example player character
+      fill(0, 255, 0);
+      ellipse(mouseX, mouseY, 50, 50);
+
+      // Display coordinates
+      displayCoordinates();
+    }
+
+    function displayCoordinates() {
+      fill(255);
+      textSize(16);
+      text("X: " + mouseX + " Y: " + mouseY, 10, height - 10);
+    }
+  </script>
+</body>
+</html>
