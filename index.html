@@ -8,6 +8,7 @@
   <script>
     let bg;
     let message = "";
+    let choices = [];
 
     function preload() {
       bg = loadImage('bg.png');
@@ -37,7 +38,17 @@
         fill(255);
         textSize(20);
         textAlign(CENTER);
-        text(message, width / 2, height - 50);
+        text(message, width / 2, height - 100);
+      }
+
+      // Display choices if any
+      if (choices.length > 0) {
+        fill(255);
+        textSize(16);
+        textAlign(CENTER);
+        for (let i = 0; i < choices.length; i++) {
+          text(choices[i], width / 2, height - 70 + i * 20);
+        }
       }
     }
 
@@ -89,11 +100,13 @@
       // Check if mouse is clicked in zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
         message = "You clicked on the computer!";
+        choices = ["Option 1: Open browser", "Option 2: Check emails", "Option 3: Shut down"];
       }
 
       // Check if mouse is clicked in zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
         message = "You clicked on the book!";
+        choices = ["Option 1: Read chapter 1", "Option 2: Bookmark page", "Option 3: Close book"];
       }
     }
   </script>
