@@ -9,9 +9,10 @@
     let bg;
     let message = "";
     let choices = [];
+    let response = "";
 
     function preload() {
-      bg = loadImage('bg.gif');
+      bg = loadImage('bg.png');
     }
 
     function setup() {
@@ -50,6 +51,14 @@
           text(choices[i], width / 2, height - 70 + i * 20);
         }
       }
+
+      // Display response if any
+      if (response !== "") {
+        fill(255, 200, 0);
+        textSize(18);
+        textAlign(CENTER);
+        text(response, width / 2, height - 150);
+      }
     }
 
     function windowResized() {
@@ -65,8 +74,8 @@
 
     function checkMouseOverZones() {
       // Example zones
-      let zone1 = { x: 100, y: 100, width: 100, height: 100 };
-      let zone2 = { x: 300, y: 200, width: 150, height: 150 };
+      let zone1 = { x: 31, y: 500, width: 200, height: 500 };
+      let zone2 = { x: 300, y: 200, width: 50, height: 50 };
 
       let isOverZone = false;
 
@@ -95,18 +104,20 @@
     function mousePressed() {
       // Example zones
       let zone1 = { x: 100, y: 100, width: 100, height: 100 };
-      let zone2 = { x: 300, y: 200, width: 150, height: 150 };
+      let zone2 = { x: 300, y: 200, width: 50, height: 50 };
 
       // Check if mouse is clicked in zone1
       if (mouseX > zone1.x && mouseX < zone1.x + zone1.width && mouseY > zone1.y && mouseY < zone1.y + zone1.height) {
         message = "You clicked on the computer!";
         choices = ["Option 1: Open browser", "Option 2: Check emails", "Option 3: Shut down"];
+        response = "You decide to interact with the computer.";
       }
 
       // Check if mouse is clicked in zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
         message = "You clicked on the book!";
         choices = ["Option 1: Read chapter 1", "Option 2: Bookmark page", "Option 3: Close book"];
+        response = "You decide to interact with the book.";
       }
     }
   </script>
