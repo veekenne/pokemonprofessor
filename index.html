@@ -127,8 +127,12 @@
     }
 
     function handleChoice(index) {
-      response = "You chose: " + choices[index];
-      message = "You clicked on " + choices[index] + "!";
+      if (choices[index] === "Option 1: Visit the Pokemon Twineline") {
+        window.open('https://veekenne.github.io/poketimeline/', '_blank');
+      } else {
+        response = "You chose: " + choices[index];
+        message = "You clicked on " + choices[index] + "!";
+      }
     }
   </script>
 </body>
