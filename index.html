@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pokemon Professor VEE KENNEDY</title>
+  <title>Pokemon Professor</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    .choice-button {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 12px;
+      background-color: #f0f0f0;
+      border: 3px solid #000;
+      padding: 10px;
+      cursor: pointer;
+      box-shadow: 3px 3px #888;
+      transition: transform 0.1s;
+    }
+
+    .choice-button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
   <script>
@@ -29,7 +46,7 @@
 
       // Example player character
       fill(0, 255, 0);
-      ellipse(mouseX, mouseY, 15, 15);
+      ellipse(mouseX, mouseY, 50, 50);
 
       // Display coordinates
       displayCoordinates();
@@ -105,7 +122,7 @@
       // Check if mouse is clicked in zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
         message = "The POKEBALL twitches. Something is inside.";
-        choices = ["Visit the Pokemon Twineline"]; 
+        choices = ["Visit the Pokemon Twineline"];
         createChoiceButtons();
       }
     }
@@ -118,7 +135,7 @@
       // Create new buttons for choices
       for (let i = 0; i < choices.length; i++) {
         let button = createButton(choices[i]);
-        button.position(width / 2 - 50, height - 70 + i * 30);
+        button.position(width / 2 - 100, height - 70 + i * 50);
         button.class('choice-button');
         button.mousePressed(() => handleChoice(i));
       }
@@ -126,18 +143,17 @@
 
     function handleChoice(index) {
       if (choices[index] === "Visit the Pokemon Twineline") {
-        window.open('https://veekenne.github.io/poketimeline/', '_blank'); }
-   
+        window.open('https://veekenne.github.io/poketimeline/', '_blank');
+      }
       if (choices[index] === "View the Professor's ePortfolio") {
-        window.open('https://veekenne.github.io/home/', '_blank');}
-    
-     if (choices[index] === "Visit the Professor's AI Projects") {
-        window.open('https://veekenne.github.io/week13/', '_blank');}
-
-        if (choices[index] === "Go to Hollow Reign on itch.io") {
-            window.open('https://veekenne.itch.io/hollow-reign', '_blank');}
-      
-      
+        window.open('https://veekenne.github.io/home/', '_blank');
+      }
+      if (choices[index] === "Visit the Professor's AI Projects") {
+        window.open('https://veekenne.github.io/week13/', '_blank');
+      }
+      if (choices[index] === "Go to Hollow Reign on itch.io") {
+        window.open('https://veekenne.itch.io/hollow-reign', '_blank');
+      }
     }
   </script>
 </body>
