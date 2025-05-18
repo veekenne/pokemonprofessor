@@ -122,7 +122,7 @@
       // Check if mouse is clicked in zone2
       if (mouseX > zone2.x && mouseX < zone2.x + zone2.width && mouseY > zone2.y && mouseY < zone2.y + zone2.height) {
         message = "The POKEBALL twitches. Something is inside.";
-        choices = ["Visit the Pokemon Twineline"];
+        choices = ["Visit the Map Project"];
         createChoiceButtons();
       }
     }
@@ -142,8 +142,8 @@
     }
 
     function handleChoice(index) {
-      if (choices[index] === "Visit the Pokemon Twineline") {
-        window.open('https://veekenne.github.io/poketimeline/', '_blank');
+      if (choices[index] === "Visit the Map Project") {
+        window.open('https://veekenne.github.io/pokemonprofessor/map.html', '_blank');
       }
       if (choices[index] === "View the Professor's ePortfolio") {
         window.open('https://veekenne.github.io/home/', '_blank');
