@@ -9,11 +9,85 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play indmap.</tw-noscript></noscript></tw-story>
-<tw-storydata name="indmap" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="64880AB8-C734-483F-94B0-48DA7C0552A0" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">document.addEventListener('mousemove', function(event) {
+<tw-storydata name="indmap" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="64880AB8-C734-483F-94B0-48DA7C0552A0" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* Body and Page Background */
+body {
+  background-color: #f5f5dc; /* Soft beige */
+  color: #2c2c2c;            /* Dark gray text */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main Twine Frame (prevents dark/black backgrounds) */
+#passages {
+  background-color: transparent; /* Transparent to allow beige to show */
+}
+
+/* Passage Styling */
+.passage {
+  background: rgba(255, 255, 255, 0.85); /* Soft white overlay */
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in forwards;
+}
+
+/* Link Styling */
+a {
+  color: #8b5e3c; /* Earthy brown tone */
+  text-decoration: none;
+  border-bottom: 1px solid #8b5e3c;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+a:hover {
+  color: #a97452;
+  border-bottom: 1px solid transparent;
+}
+
+/* Header Styling */
+h1, h2, h3 {
+  color: #3a3a3a;
+  font-family: 'Merriweather', serif;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Navigation Arrows (left/right, if used by Twine format or manually added) */
+.arrow {
+  font-size: 2em;
+  font-weight: bold;
+  color: #8b5e3c;
+  cursor: pointer;
+  user-select: none;
+  margin: 0 1em;
+}
+
+.arrow:hover {
+  color: #a97452;
+}
+
+/* Optional fade-in effect for passages */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">document.addEventListener('mousemove', function(event) {
     console.log('Mouse X:', event.clientX, 'Mouse Y:', event.clientY);
 });</script><tw-passagedata pid="1" name="Home" tags="" position="500,175" size="100,100">&lt;img src=&quot;https://veekenne.github.io/pokemonprofessor/mapsoonmeme.jpg&quot;&gt;
 
 This page is, right now, just the list I submitted on the RR form plus any notes I already have, pillaged from my &lt;a href=&quot;https://veekenne.github.io/pokemonprofessor/KennedyPropDraft.pdf &quot;&gt;prospectus draft from Mel&#39;s class.&lt;/a&gt; It will not always be this ugly.  
+
+[[Readings on Eurocentrism-&gt;Eurocentrism]]
 
 
 [Article] Hartnett, Stephen. “Michel de Certeau’s Critical Historiography and the Rhetoric of Maps.” Philosophy &amp; Rhetoric, vol. 31, no. 4, 1998, pp. 283–302.
@@ -50,7 +124,13 @@ This page is, right now, just the list I submitted on the RR form plus any notes
 
 
 [[Scholardex-&gt;Scholardex]] | 
-</tw-passagedata><tw-passagedata pid="2" name="Scholardex" tags="" position="150,75" size="100,100">This page will list scholars by name </tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="2" name="Scholardex" tags="" position="150,75" size="100,100">This page will list scholars by name </tw-passagedata><tw-passagedata pid="3" name="Eurocentrism" tags="" position="325,275" size="100,100">https://sites.lsa.umich.edu/qmss/2022/06/14/why-your-view-of-the-world-may-be-completely-wrong/
+
+https://www.movaglobes.com/blog/why-all-world-maps-are-wrong/?srsltid=AfmBOops6eCkMhcgATA-UXV1a8hl6xjoAnGT03wPpYzBgFp_r6zGVERD
+ - useful blog 
+
+
+Keith Hodgkinson Standing the World on its Head: A Review of Eurocentrism in Humanities Maps and Atlases  </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
